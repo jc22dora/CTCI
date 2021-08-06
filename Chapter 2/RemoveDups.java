@@ -1,33 +1,26 @@
 import java.util.LinkedList;
 
-import java.util.LinkedList;
-import java.util.HashMap;
-import java.util.Node;
-// 8:22
+// 2:30
 
 public class RemoveDups {
-    // class
+    static class Node {
+        int data;
+        Node next;
 
-    // buffer strategy - place all elements of list in hashmap. If collision, remove node. 
-    // this will run in O(n) time but O(2n) space
-    // no buffer strategy - brute force dup search.
-    // this will run in O(n^2) time but o(1) space
-    public LinkedList<Integer> removeDuplicates(LinkedList<Integer> list) {
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-        Node prev = new Node<Integer>();
-        for(int e:list) {
-            if(list.contains(e)) {
-
-            }
+        Node(int d) {
+            data = d;
+            next = null;
         }
+    } 
+
+    public static LinkedList<Integer> removeDups(LinkedList<Integer> list) {
+        LinkedList<Integer> newList = new LinkedList<Integer>();
+        Node temp = list.getFirst();
 
         return list;
-
     }
-    public LinkedList<Integer> removeDuplicatesNoBuffer(LinkedList<Integer> list) {
 
-        return list;
-    }
+
 
     public static void main(String[] args) {
         System.out.println("Hello");

@@ -30,6 +30,20 @@ public class LinkedList {
         return list;
     }
 
+    public static LinkedList removeDups(LinkedList list) {
+        // create new empty linkedlist
+        // iterate through list and adding every unique node to the new list
+        // remove every node from og list after adding/passing
+
+        LinkedList newList;
+        Node temp = list.head;
+        while(temp != null) {
+            
+        }
+
+        return list;
+    }
+
     public static void printList(LinkedList list) {
         Node temp = list.head;
         while(temp != null) {
