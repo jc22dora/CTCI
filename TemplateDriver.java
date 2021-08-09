@@ -1,3 +1,10 @@
+/**
+ * TemplateDriver is a tool that was developed for quick and easy command line generation 
+ * of a java module
+ *
+ * @author John Doran
+ */
+
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,7 +20,13 @@ import java.nio.file.Paths;
 
 
 public class TemplateDriver {
-    
+
+    /**
+    * Replaces the template placeholders with new file name
+    *
+    * @param title is the file title in formal case.
+    * @param camelTitle is the file title in camel case.
+    */
     public void replaceTemplateText(String title,String camelTitle){
         try {
             BufferedReader reader = new BufferedReader(new FileReader(title+"Copy.txt"));
@@ -22,7 +35,7 @@ public class TemplateDriver {
             String str;
             while ((str = reader.readLine()) != null) { 
                 str = str.replace("templateTitle", camelTitle);
-                str = str.replace("Template", title); // replace string sequence
+                str = str.replace("Template", title); 
                 
                 writer.println(str);
             }
@@ -32,7 +45,12 @@ public class TemplateDriver {
         ioe.printStackTrace();
      }
     }
-
+    
+    /**
+    * Replaces the template placeholders with new file name
+    *
+    * @param templateTitle is the file title in formal case.
+    */
     public void copyTemplate(String templateTitle) {
         FileInputStream instream = null;
 	    FileOutputStream outstream = null;
@@ -47,25 +65,26 @@ public class TemplateDriver {
     	    byte[] buffer = new byte[1024];
  
     	    int length;
-    	    /*copying the contents from input stream to
-    	     * output stream using read and write methods
-    	     */
+
     	    while ((length = instream.read(buffer)) > 0){
     	    	outstream.write(buffer, 0, length);
     	    }
 
-    	    //Closing the input/output file streams
     	    instream.close();
     	    outstream.close();
 
-    	    System.out.println("File copied successfully");
+    	    System.out.println("File copied");
  
     	}catch(IOException ioe){
     		ioe.printStackTrace();
     	 }
     }
 
-
+    /**
+    * Replaces the template placeholders with new file name
+    *
+    * @param templateTitle is the file title in formal case.
+    */
     public void convertTxtToJava(String templateTitle) {
         FileInputStream instream = null;
 	    FileOutputStream outstream = null;
@@ -79,14 +98,11 @@ public class TemplateDriver {
     	    byte[] buffer = new byte[1024];
  
     	    int length;
-    	    /*copying the contents from input stream to
-    	     * output stream using read and write methods
-    	     */
+  
     	    while ((length = instream.read(buffer)) > 0){
     	    	outstream.write(buffer, 0, length);
     	    }
 
-    	    //Closing the input/output file streams
     	    instream.close();
     	    outstream.close();
 
@@ -97,6 +113,11 @@ public class TemplateDriver {
     	 }
     }
 
+    /**
+    * Replaces the template placeholders with new file name
+    *
+    * @param title is the file title in formal case.
+    */
     public void cleanUpArtifacts(String title) {
         try
         {
@@ -109,14 +130,14 @@ public class TemplateDriver {
         }
         catch(DirectoryNotEmptyException e)
         {
-            System.out.println("Directory is not empty.");
+            System.out.println("Directory is not empty");
         }
         catch(IOException e)
         {
-            System.out.println("Invalid permissions.");
+            System.out.println("Invalid permissions");
         }
           
-        System.out.println("Clean up successful.");
+        System.out.println("Clean up successful");
     }
 
 
