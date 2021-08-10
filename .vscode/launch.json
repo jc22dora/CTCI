@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Stack",
+            "request": "launch",
+            "mainClass": "Stack",
+            "projectName": "CTCI_7871acc3"
+        },
+        {
+            "type": "java",
             "name": "Launch TestCase",
             "request": "launch",
             "mainClass": "TestCase",
